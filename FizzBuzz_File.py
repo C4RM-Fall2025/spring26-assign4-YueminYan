@@ -1,0 +1,16 @@
+
+
+def FizzBuzz(start,end):
+  outlist=[]
+  for i in range(start,end+1):
+    if i % 15==0:
+      outlist.append('FizzBuzz')
+    elif i % 3==0:
+      outlist.append('Fizz')
+    elif i % 5==0:
+      outlist.append('Buzz')
+    else:
+      outlist.append(i)
+
+  return outlist
+
