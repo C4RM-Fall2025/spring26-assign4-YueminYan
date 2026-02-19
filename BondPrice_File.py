@@ -1,6 +1,6 @@
 
 
-def getBondprice(y,face,couponRate,m,ppy):
+def getBondPrice(y,face,couponRate,m,ppy):
   sumpvcf=0
   cf=face*couponRate/ppy
   if ppy==1:
