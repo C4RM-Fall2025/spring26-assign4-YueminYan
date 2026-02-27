@@ -1,20 +1,25 @@
-
-
 def getBondPrice(y,face,couponRate,m,ppy):
-  sumpvcf=0
-  cf=face*couponRate/ppy
-  if ppy==1:
-    if i==m:
-      cf=cf+face
-    for i in range(1,m+1):
-      pvf=(1+y)**-i
-      sumpvcf=sumpvcf+cf*pvf
-  elif ppy!=1:
-    t=m*ppy
-    for j in range(1,t+1):
-      if j==m*ppy:
-        cf=cf+face
-      for j in range(1,m+1):
-        pvf=(1+y)**-j
-        sumpvcf=sumpvcf+cf*pvf
-  return sumpvcf
+  sum_present_values = 0
+  
+  # Calculate periodic coupon payment
+  periodic_coupon = face * couponRate / ppy
+  
+  # Calculate periodic yield
+  periodic_yield = y / ppy
+  
+  # Total number of periods
+  total_periods = m * ppy
+
+  for t in range(1, total_periods + 1):
+    # Determine the cash flow for the current period
+    cash_flow = periodic_coupon
+    if t == total_periods:
+      cash_flow += face # Add face value only to the last payment
+
+    # Calculate present value factor for the current period
+    present_value_factor = (1 + periodic_yield)**-t
+
+    # Add the present value of the cash flow to the total
+    sum_present_values += cash_flow * present_value_factor
+
+  return sum_present_values
