@@ -2,12 +2,13 @@ def FizzBuzz(start,end):
   outlist=[]
   for i in range(start,end+1):
     if i % 15==0:
-      outlist.append('fizzbuzz')
+      outlist.append("fizzbuzz")
     elif i % 3==0:
-      outlist.append('fizz')
+      outlist.append("fizz")
     elif i % 5==0:
-      outlist.append('buzz')
+      outlist.append("buzz")
     else:
       outlist.append(i)
 
    return outlist
+
