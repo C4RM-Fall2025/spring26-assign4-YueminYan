@@ -6,6 +6,4 @@ def getBondPrice_E(face,couponRate,m,yc):
     if t==m:
       cf=cf+face
     sumpvcf=sumpvcf+cf*pvf
-  return sumpvcf
-
-
+  return round(sumpvcf)
